@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @font-face {
+    font-family: "SF Pro Display";
+    src: url("./../assets//fonts/SFPRODISPLAYMEDIUM.OTF") format("opentype");
+} */
+@font-face {
+    font-family: "Helvetica";
+    src: url("./../assets//fonts/HelveticaCEMedium.otf") format("opentype");
+}
+
+.home__background--invisible-gradient {
+    background: url(./images/bg-gradient.png);
+
+    background-position: center 70%;
+    background-size: 100%;
+
+    -webkit-background-clip: text;
+    color: transparent;
+
+    background-attachment: fixed;
+}
+
+.home__background--gradient {
+    background: url(./images/bg-full-gradient.png);
+    width: 100%;
+    background-repeat: no-repeat;
+    height: 200vh;
+    position: relative;
+}
+
+body {
+    font-family: "Helvetica", "sans-serif";
+}
