@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @font-face {
+@font-face {
     font-family: "SF Pro Display";
     src: url("./../assets//fonts/SFPRODISPLAYMEDIUM.OTF") format("opentype");
-} */
+}
 @font-face {
     font-family: "Helvetica";
     src: url("./../assets//fonts/HelveticaCEMedium.otf") format("opentype");
@@ -14,23 +14,41 @@
 .home__background--invisible-gradient {
     background: url(./images/bg-gradient.png);
 
-    background-position: center 70%;
-    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
+    background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
 
-    background-attachment: fixed;
+    background-size: 100%;
 }
 
-.home__background--gradient {
-    background: url(./images/bg-full-gradient.png);
+/* .home__background--gradient {
+    background: url(./images/gradient-mobile.png);
     width: 100%;
     background-repeat: no-repeat;
-    height: 200vh;
-    position: relative;
-}
+    height: 200%;
+    position: absolute;
+    top: 0;
+} */
 
 body {
-    font-family: "Helvetica", "sans-serif";
+    font-family: "SF Pro Display", "sans-serif";
+}
+
+@media screen and (min-width: 1420px) {
+    .home__background--gradient {
+        background-size: cover;
+    }
+}
+
+@media screen and (min-width: 1660px) {
+    .home__background--invisible-gradient {
+        background-attachment: unset;
+    }
+}
+
+.fk {
+    background: linear-gradient(180deg, #ffb6ff, #b344ff);
 }

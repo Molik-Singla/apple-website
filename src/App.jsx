@@ -3,7 +3,7 @@ import HomePage from "./pages/HomePage";
 
 const App = () => {
     return (
-        <section className="flex h-[900vh] justify-center bg-custom-black">
+        <section className="h-auto w-full bg-custom-black">
             <HomePage />
         </section>
     );

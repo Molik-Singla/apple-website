@@ -47,13 +47,21 @@ module.exports = {
             colors: {
                 "custom-black": "#000000",
                 "custom-white": "#CECECE",
-
-                "custom-primary-gradient": "linear-gradient(180deg,#ffb6ff,#b344ff)",
+            },
+            backgroundImage: {
+                "custom-primary-gradient": "linear-gradient(180deg, #ffb6ff, #b344ff)",
                 "custom-secondary-gradient": "linear-gradient(180deg,#ffe993,#eb831c)",
             },
             fontFamily: {
                 "custom-primary": ["Helvetica", "sans-serif"],
                 // "custom-secondary": ["Helvetica", "sans-serif"],
+            },
+
+            fontSize: {
+                "custom-mobile-semi-medium": ["18px", { lineHeight: "1.75rem" }],
+                "custom-desktop-semi-medium": ["24px", { lineHeight: "2.25rem" }],
+                "custom-mobile-medium": ["20px", { lineHeight: "1.75rem" }],
+                "custom-desktop-medium": ["32px", { lineHeight: "2.25rem" }],
             },
         },
     },

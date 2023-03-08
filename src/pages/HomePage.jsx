@@ -3,19 +3,24 @@ import React from "react";
 import FullContainer from "./../components/others/FullContainer";
 import MaxContainer from "./../components/others/MaxContainer";
 import SmallContainer from "../components/others/SmallContainer";
+import SmallAndMaxContainer from "../components/others/SmallAndMaxContainer";
+
+import { motion } from "framer-motion";
+
+import { BsArrowRight } from "react-icons/bs";
 
 const HomePage = () => {
     return (
         <section className="home flex h-auto w-full flex-col items-center">
             <FullContainer>
-                <video className="w-screen" autoPlay muted>
+                <video className="w-full" autoPlay muted>
                     <source src="./videos/first.mp4" type="video/mp4" />
                 </video>
             </FullContainer>
 
             <SmallContainer>
                 <div className="home__background--invisible-gradient flex w-full justify-center py-20">
-                    <p className="text-2.5xl font-semibold tracking-wide lg:text-5.5xl lg:leading-[60px]">
+                    <p className="text-2.5xl font-bold leading-7 lg:text-5.5xl lg:leading-[60px]">
                         A magical new way to interact with iPhone. A vital safety feature designed to save lives. An innovative 48MP camera for
                         mind-blowing detail. All powered by the ultimate smartphone chip.
                     </p>
@@ -23,44 +28,56 @@ const HomePage = () => {
             </SmallContainer>
 
             <FullContainer>
-                <div className="home__background--gradient flex w-full justify-center text-custom-black">
-                    <SmallContainer>
-                        <div className="sticky top-12 h-fit w-full">
-                            <p className="relative -left-3 text-7xl font-bold tracking-wide lg:text-[176px] lg:leading-[168px]">Pro. Beyond.</p>
+                <div className="relative w-full">
+                    <picture>
+                        <source media="(min-width:1886px)" srcset="./images/gradient-mega.png" />
+                        <source media="(min-width:1024px)" srcset="./images/gradient.png" />
+                        <source media="(min-width:789px)" srcset="./images/gradient-tab.png" />
+                        <source media="(min-width:0px)" srcset="./images/gradient-mobile.png" />
+                        <img className="" src="./images/gradient.png" alt="" />
+                    </picture>
 
-                            <div className="mt-6 flex flex-col items-start gap-6 lg:mt-14">
-                                <p className="flex flex-col gap-0 text-xl font-semibold lg:text-3.5xl">
-                                    <span>iPhone 14 Pro and </span>
-                                    <span>iPhone 14 Pro Max</span>
-                                </p>
-                                <button className="rounded-full border border-black px-4 py-1 font-sans text-sm font-medium">
-                                    With superfast 5G <sup>7</sup>
-                                </button>
+                    <div className="absolute top-0 flex h-full w-full justify-center text-custom-black">
+                        <SmallContainer>
+                            <div className="sticky top-12 h-fit w-full">
+                                <p className="relative -left-3 text-7xl font-bold tracking-wide lg:text-[176px] lg:leading-[168px]">Pro. Beyond.</p>
 
-                                <p className="flex flex-col text-lg font-semibold lg:flex-row lg:text-2.5xl">
-                                    <span>From ₹129900.00*</span>
-                                    <span>before trade-in*</span>
-                                </p>
-                                <div className="flex flex-col gap-x-14 gap-y-3 text-lg font-semibold lg:flex-row lg:text-2.5xl">
-                                    <p>Watch the film</p>
-                                    <p>Watch the event</p>
+                                <div className="mt-6 flex flex-col items-start gap-6 lg:mt-14">
+                                    <p className="flex flex-col gap-0 text-custom-mobile-medium font-semibold lg:flex-row lg:gap-2 lg:text-custom-desktop-medium">
+                                        <span>iPhone 14 Pro and </span>
+                                        <span>iPhone 14 Pro Max</span>
+                                    </p>
+                                    <button className="rounded-full border border-black px-4 py-1 font-sans text-sm font-medium">
+                                        With superfast 5G <sup>7</sup>
+                                    </button>
+
+                                    <p className="flex flex-col text-custom-mobile-semi-medium font-semibold lg:flex-row lg:text-custom-desktop-semi-medium">
+                                        <span>From ₹129900.00*</span>
+                                        <span>before trade-in*</span>
+                                    </p>
+                                    <div className="flex flex-col gap-x-14 gap-y-3 text-custom-mobile-semi-medium font-semibold lg:flex-row lg:text-custom-desktop-semi-medium">
+                                        <p>Watch the film</p>
+                                        <p>Watch the event</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </SmallContainer>
+                        </SmallContainer>
+                    </div>
                 </div>
             </FullContainer>
 
-            <FullContainer>
+            <MaxContainer>
                 <div className="relative flex w-full flex-col items-center">
-                    <div className="relative flex flex-col-reverse">
-                        <video className="h-screen w-screen" autoPlay muted>
-                            <source
-                                src="https://www.apple.com/105/media/ww/iphone-14-pro/2022/a3e991f3-071e-454c-b714-1b2319bb97a8/anim/design/large.mp4"
-                                type="video/mp4"
-                            />
-                        </video>
-                        <ul className="relative my-12 mb-20 flex flex-col gap-3 px-12 text-lg font-semibold text-[#4e4e53] lg:absolute lg:top-[34vh] lg:left-[66%] lg:m-0 lg:text-xl">
+                    <div className="flex flex-col-reverse">
+                        <div className="flex justify-center">
+                            <video className="w-3/4 lg:w-full" autoPlay muted>
+                                <source
+                                    src="https://www.apple.com/105/media/ww/iphone-14-pro/2022/a3e991f3-071e-454c-b714-1b2319bb97a8/anim/design/large.mp4"
+                                    type="video/mp4"
+                                />
+                            </video>
+                        </div>
+                        <ul className="lg:custom-mobile-medium relative my-12 mb-20 flex flex-col gap-3 px-12 text-custom-mobile-semi-medium font-semibold text-[#4e4e53] lg:absolute lg:top-[34vh] lg:left-[68%] lg:m-0">
                             <li className="cursor-pointer">Deep Purple</li>
                             <li className="cursor-pointer">Gold</li>
                             <li className="cursor-pointer">Silver</li>
@@ -68,7 +85,7 @@ const HomePage = () => {
                         </ul>
                     </div>
 
-                    <div className="mt-12 flex w-full max-w-lg flex-col gap-5 px-12 text-xl font-semibold leading-7 tracking-wide text-custom-white lg:text-3.5xl lg:leading-9">
+                    <div className="mt-12 flex w-full max-w-lg flex-col gap-5 px-12 text-custom-mobile-medium font-semibold leading-7 tracking-wide text-custom-white lg:px-0 lg:text-custom-desktop-medium lg:leading-9">
                         <p>Designed for durability.</p>
                         <p>
                             With Ceramic Shield, tougher than any smartphone glass. Water resistance.1 Surgical-grade stainless steel. 15.54 cm (6.1″)
@@ -78,13 +95,89 @@ const HomePage = () => {
 
                     <MaxContainer>
                         <div className="mt-24 flex w-4/5 items-start justify-between border-t-2 border-custom-white/60 text-custom-white lg:w-full">
-                            <img className="relative -left-2 scale-75 py-3 lg:py-6" src="./images/apple-logo.PNG" alt="" />
-                            <p className="max-w-lg py-6 text-xl font-semibold leading-6">
+                            <img className="relative -left-2 scale-75 py-3 lg:left-0 lg:scale-100 lg:py-6" src="./images/apple-logo.PNG" alt="" />
+                            <p className="max-w-lg py-6 text-custom-mobile-medium font-semibold leading-6">
                                 iPhone is also designed from the ground up to protect your privacy and put you in control of what you share and who
                                 you share it with
                             </p>
                         </div>
                     </MaxContainer>
+                </div>
+            </MaxContainer>
+
+            <FullContainer>
+                <div className="flex w-full flex-col items-center">
+                    <SmallAndMaxContainer>
+                        <div className="flex w-full flex-col items-start">
+                            <p className="max-w-lg text-8xl font-bold text-custom-white">Meet the new face of iPhone</p>
+
+                            <div className="mt-24 flex w-full justify-center">
+                                <p className="max-w-xl text-custom-mobile-medium font-semibold leading-7 tracking-wide text-custom-white lg:text-custom-desktop-medium lg:leading-9">
+                                    Introducing Dynamic Island, a truly Apple innovation that’s hardware and software — and something in between. It
+                                    bubbles up music, FaceTime and so much more — all without taking you away from what you’re doing.
+                                </p>
+                            </div>
+
+                            <div className="mt-16 flex w-full flex-col items-center">
+                                <div className="relative flex w-fit justify-center overflow-hidden">
+                                    <video className="relative top-10 w-[90%] rounded-[40px]" autoPlay muted>
+                                        <source
+                                            src="https://www.apple.com/105/media/in/iphone-14-pro/2022/a3e991f3-071e-454c-b714-1b2319bb97a8/anim/dynamic-island/large.mp4"
+                                            type="video/mp4"
+                                        />
+                                    </video>
+                                    <img
+                                        className="absolute -top-0"
+                                        src="https://www.apple.com/v/iphone-14-pro/c/images/overview/dynamic-island/dynamic_hw__wx47n1mguoi6_large.png"
+                                        alt=""
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </SmallAndMaxContainer>
+                    <div className="flex w-full items-center gap-x-5 px-4 lg:px-12">
+                        <div className="flex h-full w-full justify-end">
+                            <div className="relative flex h-full w-fit items-center gap-4 pr-20 lg:pr-24">
+                                <p className="h-full max-w-[220px] overflow-hidden text-right text-custom-mobile-medium font-medium leading-6 tracking-wide text-custom-white lg:max-w-xs lg:text-custom-desktop-semi-medium lg:leading-7">
+                                    See more of what Dynamic Island can do and how we brought it to life
+                                </p>
+                                <motion.div
+                                    initial={{
+                                        width: "100%",
+                                    }}
+                                    whileInView={{
+                                        width: "20%",
+                                        translateX: 0,
+                                    }}
+                                    viewport={{ once: true }}
+                                    transition={{
+                                        type: "tween",
+                                        duration: 1.3,
+                                        ease: "linear",
+                                    }}
+                                    className="absolute right-0 flex h-full w-full items-center justify-start bg-custom-black"
+                                >
+                                    <motion.button
+                                        initial={{
+                                            translateX: -40,
+                                        }}
+                                        whileInView={{
+                                            translateX: 0,
+                                        }}
+                                        viewport={{ once: true }}
+                                        transition={{
+                                            type: "tween",
+                                            duration: 1.5,
+                                            ease: "linear",
+                                        }}
+                                        className="rounded-full bg-custom-primary-gradient p-3 lg:p-4"
+                                    >
+                                        <BsArrowRight className="text-2xl font-black lg:text-4xl" />
+                                    </motion.button>
+                                </motion.div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </FullContainer>
         </section>
