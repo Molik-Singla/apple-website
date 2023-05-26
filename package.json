@@ -6,12 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "tailwindcss": "npx tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch",
+    "tailwindcss:build": "npx tailwindcss -i ./src/css/input.css -o ./src/css/output.css"
   },
   "dependencies": {
     "framer-motion": "^10.2.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-intersection-observer": "^9.4.3"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",

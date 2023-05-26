@@ -1,15 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import FullContainer from "./../components/others/FullContainer";
 import MaxContainer from "./../components/others/MaxContainer";
 import SmallContainer from "../components/others/SmallContainer";
 import SmallAndMaxContainer from "../components/others/SmallAndMaxContainer";
 
-import { motion } from "framer-motion";
+import { motion, useAnimation, useScroll } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 import { BsArrowRight } from "react-icons/bs";
 
 const HomePage = () => {
+    const controls = useAnimation();
+    const { ref, inView } = useInView();
+
+    const variantFunc = () => {
+        return {
+            hidden: { fontSize: "96px" },
+            visible: { fontSize: "140px", transition: { duration: 0.9 } },
+        };
+    };
+
+    useEffect(() => {
+        if (inView) controls.start("visible");
+        else controls.start("hidden");
+    }, [controls, inView]);
+
     return (
         <section className="home flex h-auto w-full flex-col items-center">
             <FullContainer>
@@ -30,10 +46,10 @@ const HomePage = () => {
             <FullContainer>
                 <div className="relative w-full">
                     <picture>
-                        <source media="(min-width:1886px)" srcset="./images/gradient-mega.png" />
-                        <source media="(min-width:1024px)" srcset="./images/gradient.png" />
-                        <source media="(min-width:789px)" srcset="./images/gradient-tab.png" />
-                        <source media="(min-width:0px)" srcset="./images/gradient-mobile.png" />
+                        <source media="(min-width:1886px)" srcSet="./images/gradient-mega.png" />
+                        <source media="(min-width:1024px)" srcSet="./images/gradient.png" />
+                        <source media="(min-width:789px)" srcSet="./images/gradient-tab.png" />
+                        <source media="(min-width:0px)" srcSet="./images/gradient-mobile.png" />
                         <img className="" src="./images/gradient.png" alt="" />
                     </picture>
 
@@ -109,9 +125,20 @@ const HomePage = () => {
                 <div className="flex w-full flex-col items-center">
                     <SmallAndMaxContainer>
                         <div className="flex w-full flex-col items-start">
-                            <p className="max-w-lg text-8xl font-bold text-custom-white">Meet the new face of iPhone</p>
+                            <motion.p
+                                ref={ref}
+                                animate={controls}
+                                initial="hidden"
+                                variants={variantFunc(inView)}
+                                className="hidden max-w-4xl text-center text-xl font-bold text-custom-white md:flex md:text-8xl"
+                            >
+                                Meet the new face of iPhone
+                            </motion.p>
+                            <p className="flex w-full justify-center text-center text-5xl font-bold text-custom-white md:hidden">
+                                Meet the new face of iPhone
+                            </p>
 
-                            <div className="mt-24 flex w-full justify-center">
+                            <div className="mt-14 flex w-full justify-center md:mt-24">
                                 <p className="max-w-xl text-custom-mobile-medium font-semibold leading-7 tracking-wide text-custom-white lg:text-custom-desktop-medium lg:leading-9">
                                     Introducing Dynamic Island, a truly Apple innovation that’s hardware and software — and something in between. It
                                     bubbles up music, FaceTime and so much more — all without taking you away from what you’re doing.
