@@ -2,15 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-    font-family: "SF Pro Display";
-    src: url("./../assets//fonts/SFPRODISPLAYMEDIUM.OTF") format("opentype");
-}
-@font-face {
-    font-family: "Helvetica";
-    src: url("./../assets//fonts/HelveticaCEMedium.otf") format("opentype");
-}
-
 .home__background--invisible-gradient {
     background: url(./images/bg-gradient.png);
 
@@ -34,7 +25,7 @@
 } */
 
 body {
-    font-family: "SF Pro Display", "sans-serif";
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 @media screen and (min-width: 1420px) {

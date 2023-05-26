@@ -533,8 +533,8 @@ video {
   top: 0px;
 }
 
-.top-12 {
-  top: 3rem;
+.top-4 {
+  top: 1rem;
 }
 
 .-left-3 {
@@ -908,18 +908,6 @@ video {
   transition-duration: 150ms;
 }
 
-@font-face {
-  font-family: "SF Pro Display";
-
-  src: url("./../assets//fonts/SFPRODISPLAYMEDIUM.OTF") format("opentype");
-}
-
-@font-face {
-  font-family: "Helvetica";
-
-  src: url("./../assets//fonts/HelveticaCEMedium.otf") format("opentype");
-}
-
 .home__background--invisible-gradient {
   background: url(./images/bg-gradient.png);
   background-repeat: no-repeat;
@@ -940,7 +928,7 @@ video {
 } */
 
 body {
-  font-family: "SF Pro Display", "sans-serif";
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 @media screen and (min-width: 1420px) {

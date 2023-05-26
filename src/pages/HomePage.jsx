@@ -55,7 +55,7 @@ const HomePage = () => {
 
                     <div className="absolute top-0 flex h-full w-full justify-center text-custom-black">
                         <SmallContainer>
-                            <div className="sticky top-12 h-fit w-full">
+                            <div className="sticky top-4 h-fit w-full">
                                 <p className="relative -left-3 text-7xl font-bold tracking-wide lg:text-[176px] lg:leading-[168px]">Pro. Beyond.</p>
 
                                 <div className="mt-6 flex flex-col items-start gap-6 lg:mt-14">

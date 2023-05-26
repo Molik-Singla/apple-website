@@ -53,8 +53,7 @@ module.exports = {
                 "custom-secondary-gradient": "linear-gradient(180deg,#ffe993,#eb831c)",
             },
             fontFamily: {
-                "custom-primary": ["Helvetica", "sans-serif"],
-                // "custom-secondary": ["Helvetica", "sans-serif"],
+                // "custom-primary": ["Helvetica", "sans-serif"],
             },
 
             fontSize: {
