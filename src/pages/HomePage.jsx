@@ -46,11 +46,31 @@ const HomePage = () => {
             <FullContainer>
                 <div className="relative w-full">
                     <picture>
-                        <source media="(min-width:1886px)" srcSet="./images/gradient-mega.png" />
-                        <source media="(min-width:1024px)" srcSet="./images/gradient.png" />
-                        <source media="(min-width:789px)" srcSet="./images/gradient-tab.png" />
-                        <source media="(min-width:0px)" srcSet="./images/gradient-mobile.png" />
-                        <img className="" src="./images/gradient.png" alt="" />
+                        <source
+                            media="(min-width:1886px)"
+                            srcSet="https://res.cloudinary.com/ddnmmgzao/image/upload/v1685431481/Apple%20Site/gradient-mega_xr1epq.png"
+                            alt="BACKGROUND_IMAGE"
+                        />
+                        <source
+                            media="(min-width:1024px)"
+                            srcSet="https://res.cloudinary.com/ddnmmgzao/image/upload/v1685431474/Apple%20Site/gradient_vjrd95.png"
+                            alt="BACKGROUND_IMAGE"
+                        />
+                        <source
+                            media="(min-width:789px)"
+                            srcSet="https://res.cloudinary.com/ddnmmgzao/image/upload/v1685431474/Apple%20Site/gradient-tab_lx5p8f.png"
+                            alt="BACKGROUND_IMAGE"
+                        />
+                        <source
+                            media="(min-width:0px)"
+                            srcSet="https://res.cloudinary.com/ddnmmgzao/image/upload/v1685431478/Apple%20Site/gradient-mobile_yh4qlj.png"
+                            alt="BACKGROUND_IMAGE"
+                        />
+                        <img
+                            className="w-full"
+                            src="https://res.cloudinary.com/ddnmmgzao/image/upload/v1685431477/Apple%20Site/bg-gradient_swlkh1.png"
+                            alt="BACKGROUND_IMAGE"
+                        />
                     </picture>
 
                     <div className="absolute top-0 flex h-full w-full justify-center text-custom-black">
@@ -111,7 +131,11 @@ const HomePage = () => {
 
                     <MaxContainer>
                         <div className="mt-24 flex w-4/5 items-start justify-between border-t-2 border-custom-white/60 text-custom-white lg:w-full">
-                            <img className="relative -left-2 scale-75 py-3 lg:left-0 lg:scale-100 lg:py-6" src="./images/apple-logo.PNG" alt="" />
+                            <img
+                                className="relative -left-2 scale-75 py-3 lg:left-0 lg:scale-100 lg:py-6"
+                                src="https://res.cloudinary.com/ddnmmgzao/image/upload/v1685431457/Apple%20Site/apple-logo_xg1jlq.png"
+                                alt="LOGO"
+                            />
                             <p className="max-w-lg py-6 text-custom-mobile-medium font-semibold leading-6">
                                 iPhone is also designed from the ground up to protect your privacy and put you in control of what you share and who
                                 you share it with
